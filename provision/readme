@@ -1,0 +1,42 @@
+#!/usr/bin/env php
+<?php
+define('INFILE', __DIR__ . '/README.md-dist');
+define('OUTFILE', '/vagrant/README.md');
+
+function run($command) {
+    $output = $status = '';
+    exec($command, $output, $status);
+
+    return trim(implode(PHP_EOL, $output));
+}
+
+$commands = array(
+    'PHP' => 'php -v',
+    'atoum' => 'atoum -v',
+    'PHPMD' => 'phpmd --version',
+    'PHP_Depend' => 'pdepend  --version',
+    'PHP_CodeSniffer' => 'phpcs --version',
+    'PHPBrew' => 'phpbrew --version',
+    'Phing' => 'phing -version',
+    'PHPUnit' => 'phpunit --version'
+);
+
+$content = '<table>' . PHP_EOL;
+
+foreach($commands as $name => $command) {
+    $output = run($command);
+    $content .= sprintf(
+        '<tr><th>%s</th><td>%s</td></tr>' . PHP_EOL,
+        $name,
+        nl2br(run($command))
+    );
+}
+
+$content .= '</table>' . PHP_EOL;
+
+if(true === file_exists(OUTFILE)) {
+    unlink(OUTFILE);
+}
+$file = fopen(OUTFILE, 'a+');
+fwrite($file, str_replace('%content%', $content, file_get_contents(INFILE)));
+fclose($file);

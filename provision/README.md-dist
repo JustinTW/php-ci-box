@@ -1,0 +1,10 @@
+# PHP CI Box
+
+## What is installed
+
+%content%
+
+## You'll also find...
+
+* Sonar v3.3 ([http://localhost:9001/](http://localhost:9001)) with PHP plugin ([jubianchi/sonar-php](https://github.com/jubianchi/sonar-php))
+* Jenkins v1.491 ([http://localhost:8181/](http://localhost:8181))

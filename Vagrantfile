@@ -58,6 +58,8 @@ Vagrant::Config.run do |config|
         }
     end
 
+    config.vm.provision :shell, :inline => "/vagrant/provision/readme"
+
     config.vm.forward_port 8080, 8181
-    config.vm.forward_port 9000, 9191
+    config.vm.forward_port 9000, 9001
 end
