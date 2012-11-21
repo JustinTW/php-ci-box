@@ -4,9 +4,9 @@
 Vagrant::Config.run do |config|
     config.vm.box = "precise32"
     config.vm.box_url = "http://files.vagrantup.com/precise32.box"
-    config.vm.host_name = "atoum-box"
+    config.vm.host_name = "php-ci-box"
 
-    config.package.name = "atoum.box"
+    config.package.name = "php-ci.box"
 
     config.vm.provision :chef_solo do |chef|
         chef.cookbooks_path = "cookbooks"
