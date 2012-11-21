@@ -22,12 +22,10 @@ Vagrant::Config.run do |config|
         chef.add_recipe "maven"
         chef.add_recipe "ant"
 
+        chef.add_recipe "box"
+
         chef.add_recipe "php"
-        chef.add_recipe "php::package"
-        chef.add_recipe "box::php-dep"
-        chef.add_recipe "box::php-config"
-        chef.add_recipe "box::php-ext"
-        chef.add_recipe "box::php-pear"
+        chef.add_recipe "box::php"
 
         chef.add_recipe "jenkins"
 
@@ -35,17 +33,18 @@ Vagrant::Config.run do |config|
         chef.add_recipe "sonar::database_mysql"
         chef.add_recipe "box::sonar-plugin"
 
-        chef.add_recipe "box"
-
-        chef.add_recipe "box::phpbrew"
-        chef.add_recipe "box::atoum"
-
         chef.json = {
+            "php" => {
+                "directives" => {
+                    "date.timezone" => "Europe/Paris",
+                    "phar.readonly" => "Off"
+                }
+            },
             "mysql" => {
                 "bind_address"  => "0.0.0.0",
                 "server_root_password" => "",
                 "server_debian_password" => "",
-                "server_repl_password" => ""
+                "server_repl_password" => "",
                 "use_upstart" => false,
             },
             "sonar" => {
