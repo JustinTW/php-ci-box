@@ -31,3 +31,6 @@
 [submodule "cookbooks/sonar"]
 	path = cookbooks/sonar
 	url = https://github.com/ctrabold/chef-sonar.git
+[submodule "cookbooks/jenkins"]
+	path = cookbooks/jenkins
+	url = https://github.com/fnichol/chef-jenkins.git
