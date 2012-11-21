@@ -44,7 +44,9 @@ Vagrant::Config.run do |config|
             "mysql" => {
                 "bind_address"  => "0.0.0.0",
                 "server_root_password" => "",
-                "use_upstart" => false
+                "server_debian_password" => "",
+                "server_repl_password" => ""
+                "use_upstart" => false,
             },
             "sonar" => {
                 "version" => "3.3",
