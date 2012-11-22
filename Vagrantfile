@@ -18,6 +18,8 @@ Vagrant::Config.run do |config|
 
         chef.add_recipe "git"
         chef.add_recipe "java"
+        chef.add_recipe "apache2"
+        chef.add_recipe "apache2::mod_php5"
         chef.add_recipe "mysql::server"
         chef.add_recipe "maven"
         chef.add_recipe "ant"
@@ -38,6 +40,12 @@ Vagrant::Config.run do |config|
                 "directives" => {
                     "date.timezone" => "Europe/Paris",
                     "phar.readonly" => "Off"
+                }
+            },
+            "phpbrew" => {
+                "versions" => {
+                    "5.3.18" => "+default +dbs +apxs2=/usr/bin/apxs2",
+                    "5.4.8" => "+default +dbs +apxs2=/usr/bin/apxs2"
                 }
             },
             "mysql" => {

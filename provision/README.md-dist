@@ -2,7 +2,44 @@
 
 ## What is installed
 
-%content%
+%installed%
+
+## PHP versions
+
+```shell
+# Switch version temporarily
+$ phpbrew use <version>
+
+# Switch default php version
+$ phpbrew switch <version>
+```
+
+<table>
+    <thead>
+        <tr>
+            <th>Version</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>php-5.3.18</th>
+            <td>
+                PHP 5.3.18 (cli) (built: Nov 22 2012 21:48:43)<br/>
+                Copyright (c) 1997-2012 The PHP Group<br/>
+                Zend Engine v2.3.0, Copyright (c) 1998-2012 Zend Technologies<br/>
+            </td>
+        </tr>
+        <tr>
+            <th>php-5.4.8</th>
+            <td>
+                PHP 5.4.8 (cli) (built: Nov 22 2012 21:44:21)<br/>
+                Copyright (c) 1997-2012 The PHP Group<br/>
+                Zend Engine v2.4.0, Copyright (c) 1998-2012 Zend Technologies<br/>
+            </td>
+        </tr>
+    </tbody>
+<table>
 
 ## You'll also find...
 

@@ -11,7 +11,7 @@ function run($command) {
 }
 
 $commands = array(
-    'PHP' => 'php -v',
+    'PHP (system default)' => 'php -v',
     'atoum' => 'atoum -v',
     'PHPMD' => 'phpmd --version',
     'PHP_Depend' => 'pdepend  --version',
@@ -21,22 +21,24 @@ $commands = array(
     'PHPUnit' => 'phpunit --version'
 );
 
-$content = '<table>' . PHP_EOL;
+$installed = '<table>' . PHP_EOL;
+$installed .= '<thead><tr><th>Utility</th><th>Version</th></thead><tbody>' . PHP_EOL;
 
 foreach($commands as $name => $command) {
     $output = run($command);
-    $content .= sprintf(
+    $installed .= sprintf(
         '<tr><th>%s</th><td>%s</td></tr>' . PHP_EOL,
         $name,
         nl2br(run($command))
     );
 }
 
-$content .= '</table>' . PHP_EOL;
+$installed .= '</tbody></table>' . PHP_EOL;
+
+$content = file_get_contents(INFILE);
+$content = str_replace('%installed%', $installed, $content);
 
 if(true === file_exists(OUTFILE)) {
     unlink(OUTFILE);
 }
-$file = fopen(OUTFILE, 'a+');
-fwrite($file, str_replace('%content%', $content, file_get_contents(INFILE)));
-fclose($file);
+file_put_contents(OUTFILE, $content);
