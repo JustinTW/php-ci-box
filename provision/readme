@@ -16,7 +16,7 @@ $commands = array(
     'PHPMD' => 'phpmd --version',
     'PHP_Depend' => 'pdepend  --version',
     'PHP_CodeSniffer' => 'phpcs --version',
-    'PhpSwitch' => 'phpswitch --version',
+    'phpswitch' => 'phpswitch --version',
     'Phing' => 'phing -version',
     'PHPUnit' => 'phpunit --version'
 );
