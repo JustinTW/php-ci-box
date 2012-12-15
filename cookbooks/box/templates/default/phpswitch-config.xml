@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+    <actions/>
+    <description></description>
+    <keepDependencies>false</keepDependencies>
+    <properties/>
+    <scm class="hudson.scm.NullSCM"/>
+    <canRoam>true</canRoam>
+    <disabled>false</disabled>
+    <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+    <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+    <triggers class="vector"/>
+    <concurrentBuild>false</concurrentBuild>
+    <builders>
+        <hudson.tasks.Shell>
+            <command>#!/bin/bash
+
+                set +e
+
+                echo &quot;Sourcing /usr/share/phpswitch/.phpswitch/.phpswitchrc&quot;
+                source /usr/share/phpswitch/.phpswitch/.phpswitchrc
+                echo
+
+                echo &quot;Default PHP version : &quot;
+                php -v
+                echo
+
+                echo &quot;Switching PHP version to php-5.4.8&quot;
+                php switch php-5.4.8
+                echo
+
+                echo &quot;New PHP version : &quot;
+                php -v
+                echo
+
+                echo &quot;Restoring default PHP version&quot;
+                php switch off
+                echo
+
+                echo &quot;Default PHP version : &quot;
+                php -v
+
+                set -e</command>
+        </hudson.tasks.Shell>
+    </builders>
+    <publishers/>
+    <buildWrappers/>
+</project>

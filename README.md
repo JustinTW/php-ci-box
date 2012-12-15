@@ -22,7 +22,7 @@ Zend Engine v2.3.0, Copyright (c) 1998-2012 Zend Technologies<br />
 <tr><th>PHPMD</th><td>PHPMD 1.4.1 by Manuel Pichler</td></tr>
 <tr><th>PHP_Depend</th><td>PHP_Depend 1.1.1snapshot201209122131 by Manuel Pichler</td></tr>
 <tr><th>PHP_CodeSniffer</th><td>PHP_CodeSniffer version 1.4.3 (stable) by Squiz Pty Ltd. (http://www.squiz.com.au)</td></tr>
-<tr><th>PhpSwitch</th><td>PhpSwitch version 0.1</td></tr>
+<tr><th>PhpSwitch</th><td>phpswitch version 0.1</td></tr>
 <tr><th>Phing</th><td>Phing 2.5.0snapshot20121214093509</td></tr>
 <tr><th>PHPUnit</th><td>PHPUnit 3.7.10 by Sebastian Bergmann.</td></tr>
 </tbody></table>

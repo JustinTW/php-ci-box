@@ -38,8 +38,8 @@ Vagrant::Config.run do |config|
             },
             "phpswitch" => {
                 "versions" => {
-                    "5.4.8" => "--default --pdo",
-                    "5.3.18" => "--default --pdo"
+                    "5.4.8" => "--default --pdo --mbstring --hash --session",
+                    "5.3.18" => "--default --pdo --mbstring --hash --session"
                 }
             },
             "mysql" => {
@@ -56,12 +56,21 @@ Vagrant::Config.run do |config|
                 "jdbc_url" => "jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8",
                 "jdbc_driverClassName" => "com.mysql.jdbc.Driver",
                 "jdbc_validationQuery" => "select 1",
+            },
+            "jenkins" => {
+                "node" => {
+                    "home" => "/var/lib/jenkins"
+                },
+                "server" => {
+                    "plugins" => ["URLSCM", "git", "github", "github-api", "ghprb", "clover", "maven-plugin"]
+                }
             }
         }
     end
 
     config.vm.provision :shell, :inline => "/vagrant/provision/readme"
 
-    config.vm.forward_port 8080, 8181
-    config.vm.forward_port 9000, 9001
+    config.vm.auto_port_range = 8000..9000
+    config.vm.forward_port 8080, 8181, :auto => true
+    config.vm.forward_port 9000, 9001, :auto => true
 end

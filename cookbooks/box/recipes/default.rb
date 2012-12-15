@@ -1,4 +1,5 @@
 include_recipe "apt"
+include_recipe "jenkins"
 
 package "curl"
 
