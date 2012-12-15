@@ -13,9 +13,6 @@ Vagrant::Config.run do |config|
 
         chef.add_recipe "apt"
         chef.add_recipe "build-essential"
-
-        chef.add_recipe "box"
-
         chef.add_recipe "git"
         chef.add_recipe "java"
         chef.add_recipe "apache2"
@@ -23,16 +20,13 @@ Vagrant::Config.run do |config|
         chef.add_recipe "mysql::server"
         chef.add_recipe "maven"
         chef.add_recipe "ant"
-
-        chef.add_recipe "box"
-
-        chef.add_recipe "php"
-        chef.add_recipe "box::php"
-
         chef.add_recipe "jenkins"
-
         chef.add_recipe "sonar"
         chef.add_recipe "sonar::database_mysql"
+        chef.add_recipe "php"
+
+        chef.add_recipe "box"
+        chef.add_recipe "box::php"
         chef.add_recipe "box::sonar-plugin"
 
         chef.json = {
@@ -42,10 +36,10 @@ Vagrant::Config.run do |config|
                     "phar.readonly" => "Off"
                 }
             },
-            "phpbrew" => {
+            "phpswitch" => {
                 "versions" => {
-                    "5.3.18" => "+default +dbs +apxs2=/usr/bin/apxs2",
-                    "5.4.8" => "+default +dbs +apxs2=/usr/bin/apxs2"
+                    "5.4.8" => "--default --pdo",
+                    "5.3.18" => "--default --pdo"
                 }
             },
             "mysql" => {
