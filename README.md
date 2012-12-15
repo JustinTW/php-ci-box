@@ -2,12 +2,15 @@
 
 ## How to use
 
-```ruby
-# Vagrantflie
+```shell
+$ vagrant init php-ci http://static.jubianchi.fr/boxes/php-ci.box
+$ cat Vagrantfile
 Vagrant::Config.run do |config|
     config.vm.box = "php-ci"
     config.vm.box_url = "http://static.jubianchi.fr/boxes/php-ci.box"
 end
+
+$ vagrant up
 ```
 
 ## What is installed
