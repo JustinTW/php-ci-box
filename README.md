@@ -1,5 +1,15 @@
 # PHP CI Box
 
+## How to use
+
+```ruby
+# Vagrantflie
+Vagrant::Config.run do |config|
+    config.vm.box = "php-ci"
+    config.vm.box_url = "http://static.jubianchi.fr/boxes/php-ci.box"
+end
+```
+
 ## What is installed
 
 <table>
@@ -21,11 +31,12 @@ Zend Engine v2.3.0, Copyright (c) 1998-2012 Zend Technologies<br />
 ## PHP versions
 
 ```shell
-# Switch version temporarily
-$ phpbrew use <version>
+# Switch PHP version
+$ source /usr/share/phpswitch/.phpswitch/.phpswitchrc
+$ php switch php-<version>
 
-# Switch default php version
-$ phpbrew switch <version>
+# Restore default PHP version
+$ php switch off
 ```
 
 <table>
