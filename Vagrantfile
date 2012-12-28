@@ -38,8 +38,8 @@ Vagrant::Config.run do |config|
             },
             "phpswitch" => {
                 "versions" => {
-                    "5.4.8" => "--default --pdo --mbstring --hash --session",
-                    "5.3.18" => "--default --pdo --mbstring --hash --session"
+                    "5.4.9" => "--default --atoum",
+                    "5.3.19" => "--default --atoum"
                 }
             },
             "mysql" => {

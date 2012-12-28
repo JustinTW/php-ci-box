@@ -37,17 +37,17 @@ $ php switch off
     </thead>
     <tbody>
         <tr>
-            <th>php-5.3.18</th>
+            <th>php-5.3.19</th>
             <td>
-                PHP 5.3.18 (cli) (built: Nov 22 2012 21:48:43)<br/>
+                PHP 5.3.19 (cli) (built: Dec 28 2012 15:06:07)<br/>
                 Copyright (c) 1997-2012 The PHP Group<br/>
                 Zend Engine v2.3.0, Copyright (c) 1998-2012 Zend Technologies<br/>
             </td>
         </tr>
         <tr>
-            <th>php-5.4.8</th>
+            <th>php-5.4.9</th>
             <td>
-                PHP 5.4.8 (cli) (built: Nov 22 2012 21:44:21)<br/>
+                PHP 5.4.9 (cli) (built: Dec 28 2012 15:09:00)<br/>
                 Copyright (c) 1997-2012 The PHP Group<br/>
                 Zend Engine v2.4.0, Copyright (c) 1998-2012 Zend Technologies<br/>
             </td>

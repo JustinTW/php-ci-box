@@ -21,12 +21,12 @@ $ vagrant up
 Copyright (c) 1997-2012 The PHP Group<br />
 Zend Engine v2.3.0, Copyright (c) 1998-2012 Zend Technologies<br />
     with Xdebug v2.2.1, Copyright (c) 2002-2012, by Derick Rethans</td></tr>
-<tr><th>atoum</th><td>atoum version nightly-1635-201212121023 by Frédéric Hardy (phar:///usr/share/atoum/mageekguy.atoum.phar)</td></tr>
+<tr><th>atoum</th><td>atoum version nightly-1645-201212191453 by Frédéric Hardy (phar:///usr/share/atoum/mageekguy.atoum.phar)</td></tr>
 <tr><th>PHPMD</th><td>PHPMD 1.4.1 by Manuel Pichler</td></tr>
 <tr><th>PHP_Depend</th><td>PHP_Depend 1.1.1snapshot201209122131 by Manuel Pichler</td></tr>
 <tr><th>PHP_CodeSniffer</th><td>PHP_CodeSniffer version 1.4.3 (stable) by Squiz Pty Ltd. (http://www.squiz.com.au)</td></tr>
 <tr><th>phpswitch</th><td>phpswitch version 0.1</td></tr>
-<tr><th>Phing</th><td>Phing 2.5.0snapshot20121214093509</td></tr>
+<tr><th>Phing</th><td>Phing 2.5.0snapshot20121227162519</td></tr>
 <tr><th>PHPUnit</th><td>PHPUnit 3.7.10 by Sebastian Bergmann.</td></tr>
 </tbody></table>
 
@@ -51,17 +51,17 @@ $ php switch off
     </thead>
     <tbody>
         <tr>
-            <th>php-5.3.18</th>
+            <th>php-5.3.19</th>
             <td>
-                PHP 5.3.18 (cli) (built: Nov 22 2012 21:48:43)<br/>
+                PHP 5.3.19 (cli) (built: Dec 28 2012 15:06:07)<br/>
                 Copyright (c) 1997-2012 The PHP Group<br/>
                 Zend Engine v2.3.0, Copyright (c) 1998-2012 Zend Technologies<br/>
             </td>
         </tr>
         <tr>
-            <th>php-5.4.8</th>
+            <th>php-5.4.9</th>
             <td>
-                PHP 5.4.8 (cli) (built: Nov 22 2012 21:44:21)<br/>
+                PHP 5.4.9 (cli) (built: Dec 28 2012 15:09:00)<br/>
                 Copyright (c) 1997-2012 The PHP Group<br/>
                 Zend Engine v2.4.0, Copyright (c) 1998-2012 Zend Technologies<br/>
             </td>
