@@ -15,7 +15,6 @@
 [ -z "$DEFAULT_USERNAME" ] && DEFAULT_USERNAME=$(whoami)
 
 [ -z "$LEFT_PROMPT" ] && LEFT_PROMPT=(status context dir)
-[ -z "$RIGHT_PROMPT" ] && RIGHT_PROMPT=(date)
 
 CURRENT_BG='NONE'
 CURRENT_RBG='NONE'
@@ -222,9 +221,9 @@ prompt_screen() {
 
   if [ $dead -gt 0 ]
   then
-    prompt_rsegment red black "Screen A$attached/D$detached/W$dead"
+    $1 red black "Screen A$attached/D$detached/W$dead"
   else
-    prompt_rsegment yellow black "Screen A$attached/D$detached"
+    $1 yellow black "Screen A$attached/D$detached"
   fi
 }
 
@@ -247,4 +246,3 @@ build_rprompt() {
 
 PROMPT='%{%f%b%k%}$(build_prompt)
 $(build_cmd_prompt)%{%f%k%b%} '
-RPROMPT='%{%f%b%k%}$(build_rprompt)'
