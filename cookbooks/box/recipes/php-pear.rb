@@ -1,7 +1,7 @@
 include_recipe "php"
 include_recipe "jenkins"
 
-execute "Install sonar-php plugin" do
+execute "Init PEAR" do
   command "sudo pear update-channels; sudo pear config-set auto_discover 1"
 end
 
@@ -50,18 +50,4 @@ php_pear "phing" do
   options "--alldeps"
   action :install
   not_if "which phing"
-end
-
-["vagrant-phpunit"].each do |job_name|
-    job_config = File.join(node[:jenkins][:node][:home], "#{job_name}-config.xml")
-
-    template job_config do
-        source "#{job_name}-config.xml"
-    end
-
-    jenkins_job job_name do
-        action :create
-        url "http://localhost:8080"
-        config job_config
-    end
 end

@@ -12,22 +12,33 @@ Vagrant::Config.run do |config|
         chef.cookbooks_path = "cookbooks"
 
         chef.add_recipe "apt"
-        chef.add_recipe "build-essential"
         chef.add_recipe "git"
         chef.add_recipe "java"
-        chef.add_recipe "apache2"
-        chef.add_recipe "apache2::mod_php5"
-        chef.add_recipe "mysql::server"
+        chef.add_recipe "build-essential"
         chef.add_recipe "maven"
         chef.add_recipe "ant"
+        chef.add_recipe "mysql::server"
+        chef.add_recipe "box"
+
+        chef.add_recipe "apache2"
+        chef.add_recipe "apache2::mod_php5"
+
+        chef.add_recipe "php"
+        chef.add_recipe "box::php-ext"
+        chef.add_recipe "box::php-pear"
+
         chef.add_recipe "jenkins"
+        chef.add_recipe "box::jobs"
+
         chef.add_recipe "sonar"
         chef.add_recipe "sonar::database_mysql"
-        chef.add_recipe "php"
-
-        chef.add_recipe "box"
-        chef.add_recipe "box::php"
         chef.add_recipe "box::sonar-plugin"
+
+        chef.add_recipe "atoum"
+        chef.add_recipe "atoum::dev"
+
+        chef.add_recipe "phpswitch"
+        chef.add_recipe "phpswitch::dev"
 
         chef.json = {
             "php" => {
@@ -38,8 +49,8 @@ Vagrant::Config.run do |config|
             },
             "phpswitch" => {
                 "versions" => {
-                    "5.4.9" => "--default --atoum",
-                    "5.3.19" => "--default --atoum"
+                    "5.4.9" => "--default --atoum --ctype --curl=auto",
+                    "5.3.19" => "--default --atoum --ctype --curl=auto"
                 }
             },
             "mysql" => {
@@ -64,6 +75,9 @@ Vagrant::Config.run do |config|
                 "server" => {
                     "plugins" => ["URLSCM", "git", "github", "github-api", "ghprb", "clover", "maven-plugin"]
                 }
+            },
+            "java" => {
+                "home" => "/usr/lib/jvm/java-6-openjdk-i386/jre"
             }
         }
     end

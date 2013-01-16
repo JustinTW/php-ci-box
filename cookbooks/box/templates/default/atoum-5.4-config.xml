@@ -14,13 +14,31 @@
     <builders>
         <hudson.tasks.Shell>
             <command>#!/bin/bash
-                source /usr/share/phpswitch/.phpswitch/.phpswitchrc
+source /usr/share/phpswitch/.phpswitch/.phpswitchrc
 
-                php switch php-5.4.9
+php switch php-5.4.9
 
-                atoum --test-it</command>
+atoum --test-it
+            </command>
         </hudson.tasks.Shell>
     </builders>
-    <publishers/>
+    <publishers>
+        <hudson.tasks.junit.JUnitResultArchiver>
+            <testResults>atoum.xunit.xml</testResults>
+            <keepLongStdio>false</keepLongStdio>
+            <testDataPublishers/>
+        </hudson.tasks.junit.JUnitResultArchiver>
+        <hudson.plugins.clover.CloverPublisher plugin="clover@4.0.6">
+            <cloverReportDir></cloverReportDir>
+            <cloverReportFileName>atoum.clover.xml</cloverReportFileName>
+            <healthyTarget>
+                <methodCoverage>70</methodCoverage>
+                <conditionalCoverage>80</conditionalCoverage>
+                <statementCoverage>80</statementCoverage>
+            </healthyTarget>
+            <unhealthyTarget/>
+            <failingTarget/>
+        </hudson.plugins.clover.CloverPublisher>
+    </publishers>
     <buildWrappers/>
 </project>

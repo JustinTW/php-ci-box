@@ -62,6 +62,12 @@
             <command>atoum --test-all</command>
         </hudson.tasks.Shell>
     </builders>
-    <publishers/>
+    <publishers>
+        <hudson.tasks.junit.JUnitResultArchiver>
+            <testResults>atoum.xunit.xml</testResults>
+            <keepLongStdio>false</keepLongStdio>
+            <testDataPublishers/>
+        </hudson.tasks.junit.JUnitResultArchiver>
+    </publishers>
     <buildWrappers/>
 </project>

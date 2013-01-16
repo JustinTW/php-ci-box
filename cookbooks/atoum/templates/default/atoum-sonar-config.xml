@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+    <actions/>
+    <description></description>
+    <keepDependencies>false</keepDependencies>
+    <properties>
+        <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.5">
+            <projectUrl>http://github.com/atoum/atoum/</projectUrl>
+        </com.coravy.hudson.plugins.github.GithubProjectProperty>
+    </properties>
+    <scm class="hudson.plugins.git.GitSCM" plugin="git@1.1.26">
+        <configVersion>2</configVersion>
+        <userRemoteConfigs>
+            <hudson.plugins.git.UserRemoteConfig>
+                <name></name>
+                <refspec></refspec>
+                <url>git://github.com/atoum/atoum.git</url>
+            </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfigs>
+        <branches>
+            <hudson.plugins.git.BranchSpec>
+                <name>master</name>
+            </hudson.plugins.git.BranchSpec>
+        </branches>
+        <disableSubmodules>false</disableSubmodules>
+        <recursiveSubmodules>false</recursiveSubmodules>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <authorOrCommitter>false</authorOrCommitter>
+        <clean>false</clean>
+        <wipeOutWorkspace>false</wipeOutWorkspace>
+        <pruneBranches>false</pruneBranches>
+        <remotePoll>false</remotePoll>
+        <ignoreNotifyCommit>false</ignoreNotifyCommit>
+        <useShallowClone>false</useShallowClone>
+        <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
+        <gitTool>Default</gitTool>
+        <browser class="hudson.plugins.git.browser.GithubWeb">
+            <url>https://github.com/atoum/atoum/</url>
+        </browser>
+        <submoduleCfg class="list"/>
+        <relativeTargetDir></relativeTargetDir>
+        <reference></reference>
+        <excludedRegions></excludedRegions>
+        <excludedUsers></excludedUsers>
+        <gitConfigName></gitConfigName>
+        <gitConfigEmail></gitConfigEmail>
+        <skipTag>false</skipTag>
+        <includedRegions></includedRegions>
+        <scmName></scmName>
+    </scm>
+    <canRoam>true</canRoam>
+    <disabled>false</disabled>
+    <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+    <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+    <triggers class="vector"/>
+    <concurrentBuild>false</concurrentBuild>
+    <builders>
+        <hudson.tasks.Shell>
+            <command>set +e
+cat &lt;&lt;EOT &gt; pom.xml
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;groupId&gt;fr.imageekguy&lt;/groupId&gt;
+    &lt;artifactId&gt;atoum&lt;/artifactId&gt;
+    &lt;name&gt;atoum&lt;/name&gt;
+    &lt;version&gt;1.0&lt;/version&gt;
+    &lt;packaging&gt;pom&lt;/packaging&gt;
+
+    &lt;scm&gt;
+        &lt;connection&gt;scm:git:https://github.com/mageekguy/atoum.git&lt;/connection&gt;
+        &lt;url&gt;https://github.com/mageekguy/atoum&lt;/url&gt;
+    &lt;/scm&gt;
+
+    &lt;build&gt;
+        &lt;sourceDirectory&gt;${basedir}/classes&lt;/sourceDirectory&gt;
+        &lt;testSourceDirectory&gt;${basedir}/tests&lt;/testSourceDirectory&gt;
+    &lt;/build&gt;
+
+    &lt;properties&gt;
+        &lt;sonar.language&gt;php&lt;/sonar.language&gt;
+        &lt;sonar.jdbc.url&gt;jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;amp;characterEncoding=utf8&lt;/sonar.jdbc.url&gt;
+        &lt;sonar.jdbc.driver&gt;com.mysql.jdbc.Driver&lt;/sonar.jdbc.driver&gt;
+        &lt;sonar.jdbc.username&gt;root&lt;/sonar.jdbc.username&gt;
+        &lt;sonar.jdbc.password&gt;&lt;/sonar.jdbc.password&gt;
+        &lt;sonar.host.url&gt;http://127.0.0.1:9000&lt;/sonar.host.url&gt;
+
+        &lt;sonar.phpUnit.skip&gt;true&lt;/sonar.phpUnit.skip&gt;
+        &lt;sonar.phpCodesniffer.skip&gt;true&lt;/sonar.phpCodesniffer.skip&gt;
+
+        &lt;sonar.atoum.commandLine&gt;bin/atoum&lt;/sonar.atoum.commandLine&gt;
+        &lt;sonar.atoum.commandLineArgument&gt;--test-it&lt;/sonar.atoum.commandLineArgument&gt;
+    &lt;/properties&gt;
+&lt;/project&gt;
+
+EOT
+
+JAVA_HOME=/usr/lib/jvm/java-6-openjdk-i386/jre mvn sonar:sonar
+            </command>
+        </hudson.tasks.Shell>
+    </builders>
+    <publishers/>
+    <buildWrappers/>
+</project>

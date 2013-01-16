@@ -14,9 +14,6 @@
     <builders>
         <hudson.tasks.Shell>
             <command>#!/bin/bash
-source /usr/share/phpswitch/.phpswitch/.phpswitchrc
-
-php switch php-5.3.19
 
 atoum --test-it
             </command>
