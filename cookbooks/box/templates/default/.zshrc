@@ -6,7 +6,8 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 source /usr/share/phpswitch/.phpswitch/.phpswitchprompt
-LEFT_PROMPT=(status context date screen dir phpswitch sf2 vagrant git); export LEFT_PROMPT
+LEFT_PROMPT=(status context dir phpswitch sf2 vagrant git); export LEFT_PROMPT
+RIGHT_PROMPT=(date screen); export LEFT_PROMPT
 ZSH_THEME="jubianchi"
 
 # Example aliases

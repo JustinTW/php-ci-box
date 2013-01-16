@@ -1,7 +1,7 @@
 # vim:ft=zsh ts=2 sw=2 sts=2
 
-[ -z "$SEGMENT_SEPARATOR" ] && SEGMENT_SEPARATOR='⮀'
-[ -z "$RSEGMENT_SEPARATOR" ] && RSEGMENT_SEPARATOR='⮂'
+[ -z "$SEGMENT_SEPARATOR" ] && SEGMENT_SEPARATOR=''
+[ -z "$RSEGMENT_SEPARATOR" ] && RSEGMENT_SEPARATOR=''
 [ -z "$GIT_DIRTY_SYMBOL" ] && GIT_DIRTY_SYMBOL='±'
 [ -z "$STATUS_ERROR_SYMBOL" ] && STATUS_ERROR_SYMBOL='✘'
 [ -z "$STATUS_ROOT_SYMBOL" ] && STATUS_ROOT_SYMBOL='⚡'
@@ -246,3 +246,4 @@ build_rprompt() {
 
 PROMPT='%{%f%b%k%}$(build_prompt)
 $(build_cmd_prompt)%{%f%k%b%} '
+RPROMPT='%{%f%b%k%}$(build_rprompt)'

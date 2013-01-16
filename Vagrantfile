@@ -18,6 +18,7 @@ Vagrant::Config.run do |config|
         chef.add_recipe "maven"
         chef.add_recipe "ant"
         chef.add_recipe "mysql::server"
+        chef.add_recipe "jenkins"
         chef.add_recipe "box"
 
         chef.add_recipe "apache2"
@@ -27,7 +28,6 @@ Vagrant::Config.run do |config|
         chef.add_recipe "box::php-ext"
         chef.add_recipe "box::php-pear"
 
-        chef.add_recipe "jenkins"
         chef.add_recipe "box::jobs"
 
         chef.add_recipe "sonar"
