@@ -1,8 +1,12 @@
 # vim:ft=zsh ts=2 sw=2 sts=2
 
-[ -z "$SEGMENT_SEPARATOR" ] && SEGMENT_SEPARATOR=''
-[ -z "$RSEGMENT_SEPARATOR" ] && RSEGMENT_SEPARATOR=''
+[ -z "$SEGMENT_SEPARATOR" ] && SEGMENT_SEPARATOR='⮀'
+SEGMENT_SEPARATOR=$(echo $SEGMENT_SEPARATOR | tr -d ' ')
+[ -z "$RSEGMENT_SEPARATOR" ] && RSEGMENT_SEPARATOR='⮂'
+RSEGMENT_SEPARATOR=$(echo $RSEGMENT_SEPARATOR | tr -d ' ')
 [ -z "$GIT_DIRTY_SYMBOL" ] && GIT_DIRTY_SYMBOL='±'
+[ -z "$GIT_AHEAD_SYMBOL" ] && GIT_AHEAD_SYMBOL='↑'
+[ -z "$GIT_BEHIND_SYMBOL" ] && GIT_BEHIND_SYMBOL='↓'
 [ -z "$STATUS_ERROR_SYMBOL" ] && STATUS_ERROR_SYMBOL='✘'
 [ -z "$STATUS_ROOT_SYMBOL" ] && STATUS_ROOT_SYMBOL='⚡'
 [ -z "$STATUS_BACKGROUND_SYMBOL" ] && STATUS_BACKGROUND_SYMBOL='⚙'
@@ -123,8 +127,8 @@ prompt_git() {
       if [ $ahead -gt 0 -o $behind -gt 0 ]
       then
         position="("
-        [ $ahead -gt 0 ] && position="$position↑$ahead"
-        [ $behind -gt 0 ] && position="$position↓$behind"
+        [ $ahead -gt 0 ] && position="$position$GIT_AHEAD_SYMBOL$ahead"
+        [ $behind -gt 0 ] && position="$position$GIT_BEHIND_SYMBOL$behind"
         position="$position)"
       fi
     fi
