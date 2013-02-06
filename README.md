@@ -17,7 +17,7 @@ $ vagrant up
 
 <table>
 <thead><tr><th>Utility</th><th>Version</th></thead><tbody>
-<tr><th>PHP (system default)</th><td>PHP 5.3.10-1ubuntu3.4 with Suhosin-Patch (cli) (built: Sep 12 2012 19:00:43)<br />
+<tr><th>PHP (system default)</th><td>PHP 5.3.10-1ubuntu3.5 with Suhosin-Patch (cli) (built: Jan 18 2013 23:45:59)<br />
 Copyright (c) 1997-2012 The PHP Group<br />
 Zend Engine v2.3.0, Copyright (c) 1998-2012 Zend Technologies<br />
     with Xdebug v2.2.1, Copyright (c) 2002-2012, by Derick Rethans</td></tr>
@@ -26,7 +26,7 @@ Zend Engine v2.3.0, Copyright (c) 1998-2012 Zend Technologies<br />
 <tr><th>PHP_Depend</th><td>PHP_Depend 1.1.1snapshot201209122131 by Manuel Pichler</td></tr>
 <tr><th>PHP_CodeSniffer</th><td>PHP_CodeSniffer version 1.4.3 (stable) by Squiz Pty Ltd. (http://www.squiz.com.au)</td></tr>
 <tr><th>phpswitch</th><td>phpswitch version 0.1</td></tr>
-<tr><th>Phing</th><td>Phing 2.5.0snapshot20130114220625</td></tr>
+<tr><th>Phing</th><td>Phing 2.5.0snapshot20130201112558</td></tr>
 <tr><th>PHPUnit</th><td>PHPUnit 3.7.13 by Sebastian Bergmann.</td></tr>
 </tbody></table>
 

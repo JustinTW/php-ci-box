@@ -95,7 +95,7 @@ cat &lt;&lt;EOT &gt; pom.xml
 
 EOT
 
-JAVA_HOME=/usr/lib/jvm/java-6-openjdk-i386/jre mvn sonar:sonar
+mvn -Djava.home=$JAVA_HOME sonar:sonar
             </command>
         </hudson.tasks.Shell>
     </builders>
